@@ -14,6 +14,7 @@
     "instance_type": "m3.xlarge",
     "ssh_username": "admin",
     "ami_name": "{{user `ami_name`}}",
+    "ami_users": ["633059600857", "540164828399"],
     "ami_block_device_mappings": [{
       "device_name": "/dev/xvda",
       "volume_type": "gp2",
