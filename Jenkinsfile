@@ -40,7 +40,7 @@ def stageWithCommitStatus(label, block) {
   stage(label) { withCommitStatus(label, block) }
 }
 
-node('JenkinsMarathonCI-Debian8-karsten') { try { stage("Checkout Repo") {
+node('JenkinsMarathonCI-Debian8-1-2017-02-23') { try { stage("Checkout Repo") {
             checkout scm
             gitCommit = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
             shortCommit = gitCommit.take(8)
