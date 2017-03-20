@@ -3,6 +3,7 @@
     "aws_access_key": "",
     "aws_secret_key": "",
     "ami_name": "",
+    "conduit_token": "",
     "packer_version": "0.10.2"
   },
   "builders": [{
@@ -34,6 +35,9 @@
     "execute_command": "{{ .Vars }} sudo -E -S bash '{{ .Path }}'",
     "type": "shell",
     "script": "install.bash",
-    "pause_before": "30s"
+    "pause_before": "30s",
+    "environment_vars": [
+        "CONDUIT_TOKEN={{user `conduit_token`}}"
+    ]
   }]
 }
